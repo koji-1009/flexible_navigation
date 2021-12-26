@@ -1,7 +1,5 @@
 library flexible_navigation;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:breakpoints_mq/breakpoints_mq.dart';
+
+export 'src/flexible_scaffold.dart';
