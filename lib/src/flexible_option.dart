@@ -4,21 +4,38 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'flexible_option.freezed.dart';
 
-enum FlexibleMode {
-  drawer,
-  navigationBar,
-  navigationRail,
+@freezed
+class FlexibleMode with _$FlexibleMode {
+  const factory FlexibleMode.drawer({
+    required bool fabInDrawer,
+  }) = FlexibleModeDrawer;
+
+  const factory FlexibleMode.navigationBar({
+    @Default(3) int limit,
+    @Default(0) int defaultIndex,
+  }) = FlexibleModeNavigationBar;
+
+  const factory FlexibleMode.navigationRail({
+    required bool fabInRail,
+  }) = FlexibleModeNavigationRail;
 }
 
 @freezed
 class FlexibleOptions with _$FlexibleOptions {
   const factory FlexibleOptions({
-    required FlexibleOptionExtraSmall extraSmall,
-    required FlexibleOptionSmallFixBody smallFixBody,
-    required FlexibleOptionSmallScaleBody smallScaleBody,
-    required FlexibleOptionMedium medium,
-    required FlexibleOptionLarge large,
+    required FlexibleOption extraSmall,
+    required FlexibleOption smallFixBody,
+    required FlexibleOption smallScaleBody,
+    required FlexibleOption medium,
+    required FlexibleOption large,
   }) = _FlexibleOptions;
+}
+
+@freezed
+class FlexibleOption with _$FlexibleOption {
+  const factory FlexibleOption({
+    required FlexibleMode mode,
+  }) = _FlexibleOption;
 }
 
 extension FlexibleOptionsExt on FlexibleOptions {
@@ -36,27 +53,4 @@ extension FlexibleOptionsExt on FlexibleOptions {
         return large;
     }
   }
-}
-
-@freezed
-class FlexibleOption with _$FlexibleOption {
-  const factory FlexibleOption.extraSmall({
-    required FlexibleMode mode,
-  }) = FlexibleOptionExtraSmall;
-
-  const factory FlexibleOption.smallFixBody({
-    required FlexibleMode mode,
-  }) = FlexibleOptionSmallFixBody;
-
-  const factory FlexibleOption.smallScaleBody({
-    required FlexibleMode mode,
-  }) = FlexibleOptionSmallScaleBody;
-
-  const factory FlexibleOption.medium({
-    required FlexibleMode mode,
-  }) = FlexibleOptionMedium;
-
-  const factory FlexibleOption.large({
-    required FlexibleMode mode,
-  }) = FlexibleOptionLarge;
 }

@@ -1,5 +1,5 @@
 library flexible_navigation;
 
-export 'package:breakpoints_mq/breakpoints_mq.dart';
-
+export 'src/flexible_destination.dart';
+export 'src/flexible_option.dart';
 export 'src/flexible_scaffold.dart';
