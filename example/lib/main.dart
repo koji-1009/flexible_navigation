@@ -72,19 +72,22 @@ class HomePage extends StatelessWidget {
             return const FlexibleMode.navigationBar();
           case BreakpointScreenSize.medium:
             return const FlexibleMode.drawer(
-              fabInDrawer: false,
+              fabInDrawer: true,
             );
           case BreakpointScreenSize.large:
             return const FlexibleMode.navigationRail(
-              fabInRail: false,
+              fabInRail: true,
             );
         }
       },
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      floatingActionButton: null,
-      floatingActionButtonLocation: null,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButtonAnimator: null,
     );
   }
