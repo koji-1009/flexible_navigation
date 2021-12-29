@@ -1,4 +1,4 @@
-import 'package:flexible_navigation/flexible_navigation.dart';
+import 'package:flexible_navigation/src/flexible_option.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:state_notifier/state_notifier.dart';

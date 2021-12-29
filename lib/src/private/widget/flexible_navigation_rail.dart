@@ -1,4 +1,4 @@
-import 'package:flexible_navigation/flexible_navigation.dart';
+import 'package:flexible_navigation/src/flexible_option.dart';
 import 'package:flexible_navigation/src/private/entity/flexible_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
