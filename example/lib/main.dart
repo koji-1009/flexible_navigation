@@ -52,6 +52,22 @@ class HomePage extends StatelessWidget {
           child: Text('third'),
         ),
       ),
+      const FlexibleDestination.item(
+        key: Key('fourth'),
+        label: 'Fourth',
+        icon: Icon(Icons.warning),
+        body: Center(
+          child: Text('fourth'),
+        ),
+      ),
+      const FlexibleDestination.item(
+        key: Key('fifth'),
+        label: 'Fifth',
+        icon: Icon(Icons.add_road),
+        body: Center(
+          child: Text('fifth'),
+        ),
+      ),
     ];
 
     return FlexibleScaffold(
