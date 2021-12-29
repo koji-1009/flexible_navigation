@@ -1,8 +1,10 @@
-import 'package:breakpoints_mq/breakpoints_mq.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'flexible_option.freezed.dart';
+
+typedef ScreenResolver = FlexibleMode Function(Size size);
 
 @freezed
 class FlexibleMode with _$FlexibleMode {
@@ -21,36 +23,18 @@ class FlexibleMode with _$FlexibleMode {
 }
 
 @freezed
-class FlexibleOptions with _$FlexibleOptions {
-  const factory FlexibleOptions({
-    required FlexibleOption extraSmall,
-    required FlexibleOption smallFixBody,
-    required FlexibleOption smallScaleBody,
-    required FlexibleOption medium,
-    required FlexibleOption large,
-  }) = _FlexibleOptions;
-}
+class FlexibleDestination with _$FlexibleDestination {
+  const factory FlexibleDestination.item({
+    required Key key,
+    required String label,
+    required Icon icon,
+    required Widget body,
+  }) = FlexibleDestinationItem;
 
-@freezed
-class FlexibleOption with _$FlexibleOption {
-  const factory FlexibleOption({
-    required FlexibleMode mode,
-  }) = _FlexibleOption;
-}
+  const factory FlexibleDestination.divider() = _FlexibleDestinationDevider;
 
-extension FlexibleOptionsExt on FlexibleOptions {
-  FlexibleOption get(BreakpointScreenSize size) {
-    switch (size) {
-      case BreakpointScreenSize.extraSmall:
-        return extraSmall;
-      case BreakpointScreenSize.smallFixBody:
-        return smallFixBody;
-      case BreakpointScreenSize.smallScaleBody:
-        return smallScaleBody;
-      case BreakpointScreenSize.medium:
-        return medium;
-      case BreakpointScreenSize.large:
-        return large;
-    }
-  }
+  const factory FlexibleDestination.custom({
+    required Key key,
+    required Widget widget,
+  }) = _FlexibleDestinationCustom;
 }

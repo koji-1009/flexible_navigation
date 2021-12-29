@@ -580,449 +580,585 @@ abstract class FlexibleModeNavigationRail implements FlexibleMode {
 }
 
 /// @nodoc
-class _$FlexibleOptionsTearOff {
-  const _$FlexibleOptionsTearOff();
+class _$FlexibleDestinationTearOff {
+  const _$FlexibleDestinationTearOff();
 
-  _FlexibleOptions call(
-      {required FlexibleOption extraSmall,
-      required FlexibleOption smallFixBody,
-      required FlexibleOption smallScaleBody,
-      required FlexibleOption medium,
-      required FlexibleOption large}) {
-    return _FlexibleOptions(
-      extraSmall: extraSmall,
-      smallFixBody: smallFixBody,
-      smallScaleBody: smallScaleBody,
-      medium: medium,
-      large: large,
+  FlexibleDestinationItem item(
+      {required Key key,
+      required String label,
+      required Icon icon,
+      required Widget body}) {
+    return FlexibleDestinationItem(
+      key: key,
+      label: label,
+      icon: icon,
+      body: body,
+    );
+  }
+
+  _FlexibleDestinationDevider divider() {
+    return const _FlexibleDestinationDevider();
+  }
+
+  _FlexibleDestinationCustom custom(
+      {required Key key, required Widget widget}) {
+    return _FlexibleDestinationCustom(
+      key: key,
+      widget: widget,
     );
   }
 }
 
 /// @nodoc
-const $FlexibleOptions = _$FlexibleOptionsTearOff();
+const $FlexibleDestination = _$FlexibleDestinationTearOff();
 
 /// @nodoc
-mixin _$FlexibleOptions {
-  FlexibleOption get extraSmall => throw _privateConstructorUsedError;
-  FlexibleOption get smallFixBody => throw _privateConstructorUsedError;
-  FlexibleOption get smallScaleBody => throw _privateConstructorUsedError;
-  FlexibleOption get medium => throw _privateConstructorUsedError;
-  FlexibleOption get large => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $FlexibleOptionsCopyWith<FlexibleOptions> get copyWith =>
+mixin _$FlexibleDestination {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Key key, String label, Icon icon, Widget body)
+        item,
+    required TResult Function() divider,
+    required TResult Function(Key key, Widget widget) custom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FlexibleDestinationItem value) item,
+    required TResult Function(_FlexibleDestinationDevider value) divider,
+    required TResult Function(_FlexibleDestinationCustom value) custom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+    required TResult orElse(),
+  }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FlexibleOptionsCopyWith<$Res> {
-  factory $FlexibleOptionsCopyWith(
-          FlexibleOptions value, $Res Function(FlexibleOptions) then) =
-      _$FlexibleOptionsCopyWithImpl<$Res>;
-  $Res call(
-      {FlexibleOption extraSmall,
-      FlexibleOption smallFixBody,
-      FlexibleOption smallScaleBody,
-      FlexibleOption medium,
-      FlexibleOption large});
-
-  $FlexibleOptionCopyWith<$Res> get extraSmall;
-  $FlexibleOptionCopyWith<$Res> get smallFixBody;
-  $FlexibleOptionCopyWith<$Res> get smallScaleBody;
-  $FlexibleOptionCopyWith<$Res> get medium;
-  $FlexibleOptionCopyWith<$Res> get large;
+abstract class $FlexibleDestinationCopyWith<$Res> {
+  factory $FlexibleDestinationCopyWith(
+          FlexibleDestination value, $Res Function(FlexibleDestination) then) =
+      _$FlexibleDestinationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FlexibleOptionsCopyWithImpl<$Res>
-    implements $FlexibleOptionsCopyWith<$Res> {
-  _$FlexibleOptionsCopyWithImpl(this._value, this._then);
+class _$FlexibleDestinationCopyWithImpl<$Res>
+    implements $FlexibleDestinationCopyWith<$Res> {
+  _$FlexibleDestinationCopyWithImpl(this._value, this._then);
 
-  final FlexibleOptions _value;
+  final FlexibleDestination _value;
   // ignore: unused_field
-  final $Res Function(FlexibleOptions) _then;
-
-  @override
-  $Res call({
-    Object? extraSmall = freezed,
-    Object? smallFixBody = freezed,
-    Object? smallScaleBody = freezed,
-    Object? medium = freezed,
-    Object? large = freezed,
-  }) {
-    return _then(_value.copyWith(
-      extraSmall: extraSmall == freezed
-          ? _value.extraSmall
-          : extraSmall // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      smallFixBody: smallFixBody == freezed
-          ? _value.smallFixBody
-          : smallFixBody // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      smallScaleBody: smallScaleBody == freezed
-          ? _value.smallScaleBody
-          : smallScaleBody // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      medium: medium == freezed
-          ? _value.medium
-          : medium // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      large: large == freezed
-          ? _value.large
-          : large // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-    ));
-  }
-
-  @override
-  $FlexibleOptionCopyWith<$Res> get extraSmall {
-    return $FlexibleOptionCopyWith<$Res>(_value.extraSmall, (value) {
-      return _then(_value.copyWith(extraSmall: value));
-    });
-  }
-
-  @override
-  $FlexibleOptionCopyWith<$Res> get smallFixBody {
-    return $FlexibleOptionCopyWith<$Res>(_value.smallFixBody, (value) {
-      return _then(_value.copyWith(smallFixBody: value));
-    });
-  }
-
-  @override
-  $FlexibleOptionCopyWith<$Res> get smallScaleBody {
-    return $FlexibleOptionCopyWith<$Res>(_value.smallScaleBody, (value) {
-      return _then(_value.copyWith(smallScaleBody: value));
-    });
-  }
-
-  @override
-  $FlexibleOptionCopyWith<$Res> get medium {
-    return $FlexibleOptionCopyWith<$Res>(_value.medium, (value) {
-      return _then(_value.copyWith(medium: value));
-    });
-  }
-
-  @override
-  $FlexibleOptionCopyWith<$Res> get large {
-    return $FlexibleOptionCopyWith<$Res>(_value.large, (value) {
-      return _then(_value.copyWith(large: value));
-    });
-  }
+  final $Res Function(FlexibleDestination) _then;
 }
 
 /// @nodoc
-abstract class _$FlexibleOptionsCopyWith<$Res>
-    implements $FlexibleOptionsCopyWith<$Res> {
-  factory _$FlexibleOptionsCopyWith(
-          _FlexibleOptions value, $Res Function(_FlexibleOptions) then) =
-      __$FlexibleOptionsCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {FlexibleOption extraSmall,
-      FlexibleOption smallFixBody,
-      FlexibleOption smallScaleBody,
-      FlexibleOption medium,
-      FlexibleOption large});
-
-  @override
-  $FlexibleOptionCopyWith<$Res> get extraSmall;
-  @override
-  $FlexibleOptionCopyWith<$Res> get smallFixBody;
-  @override
-  $FlexibleOptionCopyWith<$Res> get smallScaleBody;
-  @override
-  $FlexibleOptionCopyWith<$Res> get medium;
-  @override
-  $FlexibleOptionCopyWith<$Res> get large;
+abstract class $FlexibleDestinationItemCopyWith<$Res> {
+  factory $FlexibleDestinationItemCopyWith(FlexibleDestinationItem value,
+          $Res Function(FlexibleDestinationItem) then) =
+      _$FlexibleDestinationItemCopyWithImpl<$Res>;
+  $Res call({Key key, String label, Icon icon, Widget body});
 }
 
 /// @nodoc
-class __$FlexibleOptionsCopyWithImpl<$Res>
-    extends _$FlexibleOptionsCopyWithImpl<$Res>
-    implements _$FlexibleOptionsCopyWith<$Res> {
-  __$FlexibleOptionsCopyWithImpl(
-      _FlexibleOptions _value, $Res Function(_FlexibleOptions) _then)
-      : super(_value, (v) => _then(v as _FlexibleOptions));
+class _$FlexibleDestinationItemCopyWithImpl<$Res>
+    extends _$FlexibleDestinationCopyWithImpl<$Res>
+    implements $FlexibleDestinationItemCopyWith<$Res> {
+  _$FlexibleDestinationItemCopyWithImpl(FlexibleDestinationItem _value,
+      $Res Function(FlexibleDestinationItem) _then)
+      : super(_value, (v) => _then(v as FlexibleDestinationItem));
 
   @override
-  _FlexibleOptions get _value => super._value as _FlexibleOptions;
+  FlexibleDestinationItem get _value => super._value as FlexibleDestinationItem;
 
   @override
   $Res call({
-    Object? extraSmall = freezed,
-    Object? smallFixBody = freezed,
-    Object? smallScaleBody = freezed,
-    Object? medium = freezed,
-    Object? large = freezed,
+    Object? key = freezed,
+    Object? label = freezed,
+    Object? icon = freezed,
+    Object? body = freezed,
   }) {
-    return _then(_FlexibleOptions(
-      extraSmall: extraSmall == freezed
-          ? _value.extraSmall
-          : extraSmall // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      smallFixBody: smallFixBody == freezed
-          ? _value.smallFixBody
-          : smallFixBody // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      smallScaleBody: smallScaleBody == freezed
-          ? _value.smallScaleBody
-          : smallScaleBody // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      medium: medium == freezed
-          ? _value.medium
-          : medium // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
-      large: large == freezed
-          ? _value.large
-          : large // ignore: cast_nullable_to_non_nullable
-              as FlexibleOption,
+    return _then(FlexibleDestinationItem(
+      key: key == freezed
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as Key,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as Icon,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Widget,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_FlexibleOptions
+class _$FlexibleDestinationItem
     with DiagnosticableTreeMixin
-    implements _FlexibleOptions {
-  const _$_FlexibleOptions(
-      {required this.extraSmall,
-      required this.smallFixBody,
-      required this.smallScaleBody,
-      required this.medium,
-      required this.large});
+    implements FlexibleDestinationItem {
+  const _$FlexibleDestinationItem(
+      {required this.key,
+      required this.label,
+      required this.icon,
+      required this.body});
 
   @override
-  final FlexibleOption extraSmall;
+  final Key key;
   @override
-  final FlexibleOption smallFixBody;
+  final String label;
   @override
-  final FlexibleOption smallScaleBody;
+  final Icon icon;
   @override
-  final FlexibleOption medium;
-  @override
-  final FlexibleOption large;
+  final Widget body;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FlexibleOptions(extraSmall: $extraSmall, smallFixBody: $smallFixBody, smallScaleBody: $smallScaleBody, medium: $medium, large: $large)';
+    return 'FlexibleDestination.item(key: $key, label: $label, icon: $icon, body: $body)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'FlexibleOptions'))
-      ..add(DiagnosticsProperty('extraSmall', extraSmall))
-      ..add(DiagnosticsProperty('smallFixBody', smallFixBody))
-      ..add(DiagnosticsProperty('smallScaleBody', smallScaleBody))
-      ..add(DiagnosticsProperty('medium', medium))
-      ..add(DiagnosticsProperty('large', large));
+      ..add(DiagnosticsProperty('type', 'FlexibleDestination.item'))
+      ..add(DiagnosticsProperty('key', key))
+      ..add(DiagnosticsProperty('label', label))
+      ..add(DiagnosticsProperty('icon', icon))
+      ..add(DiagnosticsProperty('body', body));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FlexibleOptions &&
-            const DeepCollectionEquality()
-                .equals(other.extraSmall, extraSmall) &&
-            const DeepCollectionEquality()
-                .equals(other.smallFixBody, smallFixBody) &&
-            const DeepCollectionEquality()
-                .equals(other.smallScaleBody, smallScaleBody) &&
-            const DeepCollectionEquality().equals(other.medium, medium) &&
-            const DeepCollectionEquality().equals(other.large, large));
+            other is FlexibleDestinationItem &&
+            const DeepCollectionEquality().equals(other.key, key) &&
+            const DeepCollectionEquality().equals(other.label, label) &&
+            const DeepCollectionEquality().equals(other.icon, icon) &&
+            const DeepCollectionEquality().equals(other.body, body));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(extraSmall),
-      const DeepCollectionEquality().hash(smallFixBody),
-      const DeepCollectionEquality().hash(smallScaleBody),
-      const DeepCollectionEquality().hash(medium),
-      const DeepCollectionEquality().hash(large));
+      const DeepCollectionEquality().hash(key),
+      const DeepCollectionEquality().hash(label),
+      const DeepCollectionEquality().hash(icon),
+      const DeepCollectionEquality().hash(body));
 
   @JsonKey(ignore: true)
   @override
-  _$FlexibleOptionsCopyWith<_FlexibleOptions> get copyWith =>
-      __$FlexibleOptionsCopyWithImpl<_FlexibleOptions>(this, _$identity);
+  $FlexibleDestinationItemCopyWith<FlexibleDestinationItem> get copyWith =>
+      _$FlexibleDestinationItemCopyWithImpl<FlexibleDestinationItem>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Key key, String label, Icon icon, Widget body)
+        item,
+    required TResult Function() divider,
+    required TResult Function(Key key, Widget widget) custom,
+  }) {
+    return item(key, label, icon, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+  }) {
+    return item?.call(key, label, icon, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+    required TResult orElse(),
+  }) {
+    if (item != null) {
+      return item(key, label, icon, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FlexibleDestinationItem value) item,
+    required TResult Function(_FlexibleDestinationDevider value) divider,
+    required TResult Function(_FlexibleDestinationCustom value) custom,
+  }) {
+    return item(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+  }) {
+    return item?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+    required TResult orElse(),
+  }) {
+    if (item != null) {
+      return item(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _FlexibleOptions implements FlexibleOptions {
-  const factory _FlexibleOptions(
-      {required FlexibleOption extraSmall,
-      required FlexibleOption smallFixBody,
-      required FlexibleOption smallScaleBody,
-      required FlexibleOption medium,
-      required FlexibleOption large}) = _$_FlexibleOptions;
+abstract class FlexibleDestinationItem implements FlexibleDestination {
+  const factory FlexibleDestinationItem(
+      {required Key key,
+      required String label,
+      required Icon icon,
+      required Widget body}) = _$FlexibleDestinationItem;
 
-  @override
-  FlexibleOption get extraSmall;
-  @override
-  FlexibleOption get smallFixBody;
-  @override
-  FlexibleOption get smallScaleBody;
-  @override
-  FlexibleOption get medium;
-  @override
-  FlexibleOption get large;
-  @override
+  Key get key;
+  String get label;
+  Icon get icon;
+  Widget get body;
   @JsonKey(ignore: true)
-  _$FlexibleOptionsCopyWith<_FlexibleOptions> get copyWith =>
+  $FlexibleDestinationItemCopyWith<FlexibleDestinationItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$FlexibleOptionTearOff {
-  const _$FlexibleOptionTearOff();
-
-  _FlexibleOption call({required FlexibleMode mode}) {
-    return _FlexibleOption(
-      mode: mode,
-    );
-  }
+abstract class _$FlexibleDestinationDeviderCopyWith<$Res> {
+  factory _$FlexibleDestinationDeviderCopyWith(
+          _FlexibleDestinationDevider value,
+          $Res Function(_FlexibleDestinationDevider) then) =
+      __$FlexibleDestinationDeviderCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-const $FlexibleOption = _$FlexibleOptionTearOff();
-
-/// @nodoc
-mixin _$FlexibleOption {
-  FlexibleMode get mode => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $FlexibleOptionCopyWith<FlexibleOption> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlexibleOptionCopyWith<$Res> {
-  factory $FlexibleOptionCopyWith(
-          FlexibleOption value, $Res Function(FlexibleOption) then) =
-      _$FlexibleOptionCopyWithImpl<$Res>;
-  $Res call({FlexibleMode mode});
-
-  $FlexibleModeCopyWith<$Res> get mode;
-}
-
-/// @nodoc
-class _$FlexibleOptionCopyWithImpl<$Res>
-    implements $FlexibleOptionCopyWith<$Res> {
-  _$FlexibleOptionCopyWithImpl(this._value, this._then);
-
-  final FlexibleOption _value;
-  // ignore: unused_field
-  final $Res Function(FlexibleOption) _then;
+class __$FlexibleDestinationDeviderCopyWithImpl<$Res>
+    extends _$FlexibleDestinationCopyWithImpl<$Res>
+    implements _$FlexibleDestinationDeviderCopyWith<$Res> {
+  __$FlexibleDestinationDeviderCopyWithImpl(_FlexibleDestinationDevider _value,
+      $Res Function(_FlexibleDestinationDevider) _then)
+      : super(_value, (v) => _then(v as _FlexibleDestinationDevider));
 
   @override
-  $Res call({
-    Object? mode = freezed,
-  }) {
-    return _then(_value.copyWith(
-      mode: mode == freezed
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as FlexibleMode,
-    ));
-  }
-
-  @override
-  $FlexibleModeCopyWith<$Res> get mode {
-    return $FlexibleModeCopyWith<$Res>(_value.mode, (value) {
-      return _then(_value.copyWith(mode: value));
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$FlexibleOptionCopyWith<$Res>
-    implements $FlexibleOptionCopyWith<$Res> {
-  factory _$FlexibleOptionCopyWith(
-          _FlexibleOption value, $Res Function(_FlexibleOption) then) =
-      __$FlexibleOptionCopyWithImpl<$Res>;
-  @override
-  $Res call({FlexibleMode mode});
-
-  @override
-  $FlexibleModeCopyWith<$Res> get mode;
-}
-
-/// @nodoc
-class __$FlexibleOptionCopyWithImpl<$Res>
-    extends _$FlexibleOptionCopyWithImpl<$Res>
-    implements _$FlexibleOptionCopyWith<$Res> {
-  __$FlexibleOptionCopyWithImpl(
-      _FlexibleOption _value, $Res Function(_FlexibleOption) _then)
-      : super(_value, (v) => _then(v as _FlexibleOption));
-
-  @override
-  _FlexibleOption get _value => super._value as _FlexibleOption;
-
-  @override
-  $Res call({
-    Object? mode = freezed,
-  }) {
-    return _then(_FlexibleOption(
-      mode: mode == freezed
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as FlexibleMode,
-    ));
-  }
+  _FlexibleDestinationDevider get _value =>
+      super._value as _FlexibleDestinationDevider;
 }
 
 /// @nodoc
 
-class _$_FlexibleOption
+class _$_FlexibleDestinationDevider
     with DiagnosticableTreeMixin
-    implements _FlexibleOption {
-  const _$_FlexibleOption({required this.mode});
-
-  @override
-  final FlexibleMode mode;
+    implements _FlexibleDestinationDevider {
+  const _$_FlexibleDestinationDevider();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FlexibleOption(mode: $mode)';
+    return 'FlexibleDestination.divider()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FlexibleOption'))
-      ..add(DiagnosticsProperty('mode', mode));
+    properties..add(DiagnosticsProperty('type', 'FlexibleDestination.divider'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FlexibleOption &&
-            const DeepCollectionEquality().equals(other.mode, mode));
+            other is _FlexibleDestinationDevider);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(mode));
+  int get hashCode => runtimeType.hashCode;
 
-  @JsonKey(ignore: true)
   @override
-  _$FlexibleOptionCopyWith<_FlexibleOption> get copyWith =>
-      __$FlexibleOptionCopyWithImpl<_FlexibleOption>(this, _$identity);
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Key key, String label, Icon icon, Widget body)
+        item,
+    required TResult Function() divider,
+    required TResult Function(Key key, Widget widget) custom,
+  }) {
+    return divider();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+  }) {
+    return divider?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+    required TResult orElse(),
+  }) {
+    if (divider != null) {
+      return divider();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FlexibleDestinationItem value) item,
+    required TResult Function(_FlexibleDestinationDevider value) divider,
+    required TResult Function(_FlexibleDestinationCustom value) custom,
+  }) {
+    return divider(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+  }) {
+    return divider?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+    required TResult orElse(),
+  }) {
+    if (divider != null) {
+      return divider(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _FlexibleOption implements FlexibleOption {
-  const factory _FlexibleOption({required FlexibleMode mode}) =
-      _$_FlexibleOption;
+abstract class _FlexibleDestinationDevider implements FlexibleDestination {
+  const factory _FlexibleDestinationDevider() = _$_FlexibleDestinationDevider;
+}
+
+/// @nodoc
+abstract class _$FlexibleDestinationCustomCopyWith<$Res> {
+  factory _$FlexibleDestinationCustomCopyWith(_FlexibleDestinationCustom value,
+          $Res Function(_FlexibleDestinationCustom) then) =
+      __$FlexibleDestinationCustomCopyWithImpl<$Res>;
+  $Res call({Key key, Widget widget});
+}
+
+/// @nodoc
+class __$FlexibleDestinationCustomCopyWithImpl<$Res>
+    extends _$FlexibleDestinationCopyWithImpl<$Res>
+    implements _$FlexibleDestinationCustomCopyWith<$Res> {
+  __$FlexibleDestinationCustomCopyWithImpl(_FlexibleDestinationCustom _value,
+      $Res Function(_FlexibleDestinationCustom) _then)
+      : super(_value, (v) => _then(v as _FlexibleDestinationCustom));
 
   @override
-  FlexibleMode get mode;
+  _FlexibleDestinationCustom get _value =>
+      super._value as _FlexibleDestinationCustom;
+
   @override
+  $Res call({
+    Object? key = freezed,
+    Object? widget = freezed,
+  }) {
+    return _then(_FlexibleDestinationCustom(
+      key: key == freezed
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as Key,
+      widget: widget == freezed
+          ? _value.widget
+          : widget // ignore: cast_nullable_to_non_nullable
+              as Widget,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_FlexibleDestinationCustom
+    with DiagnosticableTreeMixin
+    implements _FlexibleDestinationCustom {
+  const _$_FlexibleDestinationCustom({required this.key, required this.widget});
+
+  @override
+  final Key key;
+  @override
+  final Widget widget;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'FlexibleDestination.custom(key: $key, widget: $widget)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'FlexibleDestination.custom'))
+      ..add(DiagnosticsProperty('key', key))
+      ..add(DiagnosticsProperty('widget', widget));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _FlexibleDestinationCustom &&
+            const DeepCollectionEquality().equals(other.key, key) &&
+            const DeepCollectionEquality().equals(other.widget, widget));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(key),
+      const DeepCollectionEquality().hash(widget));
+
   @JsonKey(ignore: true)
-  _$FlexibleOptionCopyWith<_FlexibleOption> get copyWith =>
-      throw _privateConstructorUsedError;
+  @override
+  _$FlexibleDestinationCustomCopyWith<_FlexibleDestinationCustom>
+      get copyWith =>
+          __$FlexibleDestinationCustomCopyWithImpl<_FlexibleDestinationCustom>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Key key, String label, Icon icon, Widget body)
+        item,
+    required TResult Function() divider,
+    required TResult Function(Key key, Widget widget) custom,
+  }) {
+    return custom(key, widget);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+  }) {
+    return custom?.call(key, widget);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Key key, String label, Icon icon, Widget body)? item,
+    TResult Function()? divider,
+    TResult Function(Key key, Widget widget)? custom,
+    required TResult orElse(),
+  }) {
+    if (custom != null) {
+      return custom(key, widget);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FlexibleDestinationItem value) item,
+    required TResult Function(_FlexibleDestinationDevider value) divider,
+    required TResult Function(_FlexibleDestinationCustom value) custom,
+  }) {
+    return custom(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+  }) {
+    return custom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FlexibleDestinationItem value)? item,
+    TResult Function(_FlexibleDestinationDevider value)? divider,
+    TResult Function(_FlexibleDestinationCustom value)? custom,
+    required TResult orElse(),
+  }) {
+    if (custom != null) {
+      return custom(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FlexibleDestinationCustom implements FlexibleDestination {
+  const factory _FlexibleDestinationCustom(
+      {required Key key,
+      required Widget widget}) = _$_FlexibleDestinationCustom;
+
+  Key get key;
+  Widget get widget;
+  @JsonKey(ignore: true)
+  _$FlexibleDestinationCustomCopyWith<_FlexibleDestinationCustom>
+      get copyWith => throw _privateConstructorUsedError;
 }
