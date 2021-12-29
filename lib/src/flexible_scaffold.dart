@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flexible_navigation/flexible_navigation.dart';
+import 'package:flexible_navigation/src/flexible_option.dart';
 import 'package:flexible_navigation/src/private/widget/flexible_drawer.dart';
 import 'package:flexible_navigation/src/private/widget/flexible_navigation_bar.dart';
 import 'package:flexible_navigation/src/private/widget/flexible_navigation_rail.dart';
