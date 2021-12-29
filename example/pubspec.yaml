@@ -33,6 +33,8 @@ dependencies:
   flexible_navigation:
     path: ../
 
+  breakpoints_mq: ^2.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
