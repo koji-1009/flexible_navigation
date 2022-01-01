@@ -51,7 +51,7 @@ class FlexibleScaffold extends StatelessWidget {
           fabAnimator: floatingActionButtonAnimator,
         ),
         navigationBar: (value) => FlexibleNavigationBar(
-          limit: max(value.limit, 5),
+          limit: min(value.limit, 5),
           defaultIndex: value.defaultIndex,
           appBar: appBar,
           fab: floatingActionButton,
