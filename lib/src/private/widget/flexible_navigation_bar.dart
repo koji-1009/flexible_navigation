@@ -59,6 +59,7 @@ class FlexibleNavigationBar extends StatelessWidget {
 
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: bottomItems,
         currentIndex: currentIndex != -1 ? currentIndex : defaultIndex,
         onTap: (index) {
