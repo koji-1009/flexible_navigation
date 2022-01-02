@@ -1,13 +1,12 @@
 import 'dart:math';
 
 import 'package:flexible_navigation/src/flexible_option.dart';
+import 'package:flexible_navigation/src/private/entity/flexible_state.dart';
 import 'package:flexible_navigation/src/private/widget/flexible_drawer.dart';
 import 'package:flexible_navigation/src/private/widget/flexible_navigation_bar.dart';
 import 'package:flexible_navigation/src/private/widget/flexible_navigation_rail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
-
-import 'private/entity/flexible_state.dart';
 
 class FlexibleScaffold extends StatelessWidget {
   const FlexibleScaffold({

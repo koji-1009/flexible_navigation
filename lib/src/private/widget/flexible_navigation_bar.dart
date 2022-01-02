@@ -27,7 +27,7 @@ class FlexibleNavigationBar extends StatelessWidget {
     final destinations = context.select<FState, List<FlexibleDestinationItem>>(
       (value) => value.navigationDestinations,
     );
-    final bottomDestinations = destinations.take(limit);
+    final bottomDestinations = destinations.take(limit).toList(growable: false);
     final bottomItems = bottomDestinations
         .map(
           (destination) => BottomNavigationBarItem(
@@ -36,7 +36,7 @@ class FlexibleNavigationBar extends StatelessWidget {
           ),
         )
         .toList(growable: false);
-    final drawerDestinations = destinations.skip(limit);
+    final drawerDestinations = destinations.skip(limit).toList(growable: false);
     final drawerItems = drawerDestinations
         .map(
           (e) => ListTile(
@@ -53,15 +53,20 @@ class FlexibleNavigationBar extends StatelessWidget {
     final currentKey = context.select<FState, Key>(
       (value) => value.currentKey,
     );
-    final currentIndex = destinations.indexWhere(
+    final bottomIndex = bottomDestinations.indexWhere(
       (destination) => destination.key == currentKey,
     );
+    final body = destinations
+        .firstWhere(
+          (destination) => destination.key == currentKey,
+        )
+        .body;
 
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: bottomItems,
-        currentIndex: currentIndex != -1 ? currentIndex : defaultIndex,
+        currentIndex: bottomIndex != -1 ? bottomIndex : defaultIndex,
         onTap: (index) {
           context
               .read<FlexibleStateController>()
@@ -76,7 +81,7 @@ class FlexibleNavigationBar extends StatelessWidget {
               ),
             )
           : null,
-      body: destinations[currentIndex].body,
+      body: body,
       appBar: appBar,
       floatingActionButton: fab,
       floatingActionButtonLocation: fabLocation,
