@@ -8,6 +8,7 @@ import 'package:flexible_navigation/src/private/widget/flexible_navigation_rail.
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 
+/// Scaffold to manage layout based on screen size.
 class FlexibleScaffold extends StatelessWidget {
   const FlexibleScaffold({
     Key? key,

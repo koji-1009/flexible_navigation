@@ -600,10 +600,8 @@ class _$FlexibleDestinationTearOff {
     return const _FlexibleDestinationDevider();
   }
 
-  _FlexibleDestinationCustom custom(
-      {required Key key, required Widget widget}) {
+  _FlexibleDestinationCustom custom({required Widget widget}) {
     return _FlexibleDestinationCustom(
-      key: key,
       widget: widget,
     );
   }
@@ -619,21 +617,21 @@ mixin _$FlexibleDestination {
     required TResult Function(Key key, String label, Icon icon, Widget body)
         item,
     required TResult Function() divider,
-    required TResult Function(Key key, Widget widget) custom,
+    required TResult Function(Widget widget) custom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -792,7 +790,7 @@ class _$FlexibleDestinationItem
     required TResult Function(Key key, String label, Icon icon, Widget body)
         item,
     required TResult Function() divider,
-    required TResult Function(Key key, Widget widget) custom,
+    required TResult Function(Widget widget) custom,
   }) {
     return item(key, label, icon, body);
   }
@@ -802,7 +800,7 @@ class _$FlexibleDestinationItem
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
   }) {
     return item?.call(key, label, icon, body);
   }
@@ -812,7 +810,7 @@ class _$FlexibleDestinationItem
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
     required TResult orElse(),
   }) {
     if (item != null) {
@@ -927,7 +925,7 @@ class _$_FlexibleDestinationDevider
     required TResult Function(Key key, String label, Icon icon, Widget body)
         item,
     required TResult Function() divider,
-    required TResult Function(Key key, Widget widget) custom,
+    required TResult Function(Widget widget) custom,
   }) {
     return divider();
   }
@@ -937,7 +935,7 @@ class _$_FlexibleDestinationDevider
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
   }) {
     return divider?.call();
   }
@@ -947,7 +945,7 @@ class _$_FlexibleDestinationDevider
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
     required TResult orElse(),
   }) {
     if (divider != null) {
@@ -1000,7 +998,7 @@ abstract class _$FlexibleDestinationCustomCopyWith<$Res> {
   factory _$FlexibleDestinationCustomCopyWith(_FlexibleDestinationCustom value,
           $Res Function(_FlexibleDestinationCustom) then) =
       __$FlexibleDestinationCustomCopyWithImpl<$Res>;
-  $Res call({Key key, Widget widget});
+  $Res call({Widget widget});
 }
 
 /// @nodoc
@@ -1017,14 +1015,9 @@ class __$FlexibleDestinationCustomCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? key = freezed,
     Object? widget = freezed,
   }) {
     return _then(_FlexibleDestinationCustom(
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as Key,
       widget: widget == freezed
           ? _value.widget
           : widget // ignore: cast_nullable_to_non_nullable
@@ -1038,16 +1031,14 @@ class __$FlexibleDestinationCustomCopyWithImpl<$Res>
 class _$_FlexibleDestinationCustom
     with DiagnosticableTreeMixin
     implements _FlexibleDestinationCustom {
-  const _$_FlexibleDestinationCustom({required this.key, required this.widget});
+  const _$_FlexibleDestinationCustom({required this.widget});
 
-  @override
-  final Key key;
   @override
   final Widget widget;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FlexibleDestination.custom(key: $key, widget: $widget)';
+    return 'FlexibleDestination.custom(widget: $widget)';
   }
 
   @override
@@ -1055,7 +1046,6 @@ class _$_FlexibleDestinationCustom
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'FlexibleDestination.custom'))
-      ..add(DiagnosticsProperty('key', key))
       ..add(DiagnosticsProperty('widget', widget));
   }
 
@@ -1064,15 +1054,12 @@ class _$_FlexibleDestinationCustom
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _FlexibleDestinationCustom &&
-            const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other.widget, widget));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(key),
-      const DeepCollectionEquality().hash(widget));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(widget));
 
   @JsonKey(ignore: true)
   @override
@@ -1087,9 +1074,9 @@ class _$_FlexibleDestinationCustom
     required TResult Function(Key key, String label, Icon icon, Widget body)
         item,
     required TResult Function() divider,
-    required TResult Function(Key key, Widget widget) custom,
+    required TResult Function(Widget widget) custom,
   }) {
-    return custom(key, widget);
+    return custom(widget);
   }
 
   @override
@@ -1097,9 +1084,9 @@ class _$_FlexibleDestinationCustom
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
   }) {
-    return custom?.call(key, widget);
+    return custom?.call(widget);
   }
 
   @override
@@ -1107,11 +1094,11 @@ class _$_FlexibleDestinationCustom
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Key key, String label, Icon icon, Widget body)? item,
     TResult Function()? divider,
-    TResult Function(Key key, Widget widget)? custom,
+    TResult Function(Widget widget)? custom,
     required TResult orElse(),
   }) {
     if (custom != null) {
-      return custom(key, widget);
+      return custom(widget);
     }
     return orElse();
   }
@@ -1152,11 +1139,9 @@ class _$_FlexibleDestinationCustom
 }
 
 abstract class _FlexibleDestinationCustom implements FlexibleDestination {
-  const factory _FlexibleDestinationCustom(
-      {required Key key,
-      required Widget widget}) = _$_FlexibleDestinationCustom;
+  const factory _FlexibleDestinationCustom({required Widget widget}) =
+      _$_FlexibleDestinationCustom;
 
-  Key get key;
   Widget get widget;
   @JsonKey(ignore: true)
   _$FlexibleDestinationCustomCopyWith<_FlexibleDestinationCustom>
