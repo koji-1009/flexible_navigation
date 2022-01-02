@@ -31,7 +31,12 @@ class FlexibleDrawer extends StatelessWidget {
     final widgets = [
       if (fabInDrawer && fab != null)
         Center(
-          child: fab,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+            ),
+            child: fab,
+          ),
         ),
       ...destinations.map(
         (destination) => destination.map(
