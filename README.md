@@ -1,39 +1,48 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# flexible_navigation
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+flexible_navigation is a Scaffold Widget inspired by [adaptive_navigation](https://pub.dev/packages/adaptive_navigation) that switches between [NavigationRail](https://api.flutter.dev/flutter/material/NavigationRail-class.html), [NavigationBar](https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html), and [Drawer](https://api.flutter.dev/flutter/material/Drawer-class.html) depending on the screen size.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+## How to use
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Implement FlexibleScaffold.
 
 ```dart
-const like = 'sample';
+import 'package:flexible_navigation/flexible_navigation.dart';
+
+@override
+Widget build(BuildContext context) {
+  return FlexibleScaffold(
+    initialKey: const Key('first'),
+    destinations: const [
+      FlexibleDestination.item(
+        key: Key('first'),
+        label: 'First',
+        icon: Icon(Icons.label),
+        body: Center(
+          child: Text('first'),
+        ),
+      ),
+      FlexibleDestination.item(
+        key: Key('second'),
+        label: 'Second',
+        icon: Icon(Icons.map),
+        body: Center(
+          child: Text('second'),
+        ),
+      ),
+    ],
+    resolver: (Size size) {
+      if (size.width <= 600) {
+        return const FlexibleMode.navigationBar();
+      } else {
+        return const FlexibleMode.navigationRail(
+          fabInRail: false,
+        );
+      }
+    },
+    appBar: AppBar(
+      title: const Text('Home'),
+    ),
+  );
+}
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
